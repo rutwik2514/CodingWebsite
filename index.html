@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Masters Academy - Baramti</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23667eea'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial Black'%3E💻%3C/text%3E%3C/svg%3E">
+    <title>Code Masters Academy - Baramati</title>
     <style>
         * {
             margin: 0;
@@ -275,11 +276,6 @@
             box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
         }
 
-        .achievement-item h3 {
-            color: #00d4ff;
-            margin-bottom: 0.5rem;
-        }
-
         /* Testimonials Section */
         .testimonials-section {
             padding: 8rem 5%;
@@ -352,71 +348,43 @@
             background-color: #00d4ff;
         }
 
-        /* Contact Section */
+        /* Contact/Register Section */
         .contact-section {
             padding: 8rem 5%;
             background: #0f0f0f;
         }
 
-        .contact-form {
-            max-width: 600px;
+        .register-section {
+            max-width: 900px;
             margin: 0 auto;
-            background: #1a1a2e;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.1);
+            text-align: center;
         }
 
-        .form-group {
-            margin-bottom: 2rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
+        .register-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
             color: #00d4ff;
-            font-weight: 500;
         }
 
-        .form-group input,
-        .form-group textarea {
+        .register-section p {
+            font-size: 1.2rem;
+            color: #aaaaaa;
+            margin-bottom: 3rem;
+        }
+
+        .google-form-container {
             width: 100%;
-            padding: 1rem;
-            background: #0f0f0f;
-            border: 2px solid #333;
-            border-radius: 10px;
-            color: #ffffff;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
+            background: #1a1a2e;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2);
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #00d4ff;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        .submit-button {
+        .google-form-container iframe {
             width: 100%;
-            padding: 1.2rem;
-            background: linear-gradient(135deg, #00d4ff, #0066ff);
-            color: white;
+            height: 1200px;
             border: none;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            font-weight: bold;
-        }
-
-        .submit-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+            display: block;
         }
 
         /* Footer */
@@ -428,15 +396,9 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-                flex-wrap: wrap;
             }
 
             .teacher-content {
@@ -447,13 +409,22 @@
                 font-size: 2rem;
             }
 
-            .contact-form {
-                padding: 2rem;
+            .google-form-container iframe {
+                height: 1400px;
+            }
+
+            .register-section h2 {
+                font-size: 2rem;
+            }
+
+            .register-section p {
+                font-size: 1rem;
             }
         }
     </style>
 </head>
 <body>
+
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
         <div class="loading-text word-1">Code</div>
@@ -470,7 +441,7 @@
         <ul class="nav-links">
             <li><a href="#teacher">Know Your Teacher</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#contact">Register</a></li>
         </ul>
     </nav>
 
@@ -481,6 +452,13 @@
             <p>Master Programming Skills in Baramati</p>
             <p style="font-size: 1.2rem; color: #00d4ff;">Launching January 3rd, 2025</p>
             <a href="#contact" class="cta-button">Enroll Now</a>
+
+            <!-- ⭐ Highlighted Phone Numbers -->
+            <p style="margin-top: 1.5rem; font-size: 1.2rem; color: #00d4ff;">
+                📞 Call:
+                <span style="color:#ffffff; font-weight:bold;">9665588416</span> /
+                <span style="color:#ffffff; font-weight:bold;">7387975630</span>
+            </p>
         </div>
     </section>
 
@@ -490,26 +468,25 @@
         <div class="teacher-content">
             <div class="teacher-image">👨‍💻</div>
             <div class="achievements">
-                 <div class="achievement-item">
+                <div class="achievement-item">
                     <h3>Software Engineer</h3>
-                    <p>Currently working as a Software Engineer at a renowned company, bringing real-world knowledge and expertise in the latest technologies that companies demand</p>
+                    <p>Currently working as a Software Engineer at a renowned company, bringing real-world knowledge and expertise in the latest technologies that companies demand.</p>
                 </div>
                 <div class="achievement-item">
                     <h3>All India Rank 42 - ICPC Chennai Regionals</h3>
-                    <p>Secured All India Rank 42 at worlds most prestigious coding contest.</p>
+                    <p>Secured All India Rank 42 at the world's most prestigious coding contest.</p>
                 </div>
                 <div class="achievement-item">
                     <h3>In top 2000 Coders of India</h3>
-                    <p>Expert Rated and 5 star coder on codeforces and codechef </p>
+                    <p>Expert Rated and 5 star coder on Codeforces and CodeChef.</p>
                 </div>
-               
                 <div class="achievement-item">
                     <h3>Expert in Multiple Languages</h3>
-                    <p>Specializing in JavaScript, C++, Ruby, Golang, Terraform</p>
+                    <p>Specializing in JavaScript, C++, Ruby, Golang, Terraform.</p>
                 </div>
                 <div class="achievement-item">
                     <h3>Proven Track Record of Success</h3>
-                    <p>Helped students land jobs at top companies like Microsoft, and Amazon</p>
+                    <p>Helped students land jobs at top companies like Microsoft, and Amazon.</p>
                 </div>
             </div>
         </div>
@@ -528,11 +505,11 @@
                 <p class="testimonial-author">- Preet, Software Engineer at AngelOne</p>
             </div>
             <div class="testimonial-slide">
-                <p class="testimonial-text">"Teacher has helped me in understanding the core algorithms and its working. I didn't even have to memorize the algorithms due to way of teaching. This interest made me pursue in depth career in Computer Science"</p>
-                <p class="testimonial-author">- Siddharth Bhangale, Student, UMASS Boston, America</p>
+                <p class="testimonial-text">"Teacher has helped me in understanding the core algorithms deeply. I didn't even have to memorize the algorithms due to the teaching style. This interest helped me pursue a deeper Computer Science career."</p>
+                <p class="testimonial-author">- Siddharth Bhangale, Student, UMASS Boston</p>
             </div>
             <div class="testimonial-slide">
-                <p class="testimonial-text">"Never thought that learning algorithms would be so easy, also regular contests created for us based on our preparation helped a lot in this journey"</p>
+                <p class="testimonial-text">"Never thought learning algorithms would be so easy. Regular contests created for us helped a lot in this journey."</p>
                 <p class="testimonial-author">- Shrey Shah, Software Engineer, UKG</p>
             </div>
         </div>
@@ -544,51 +521,34 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-      <section class="contact-section" id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <form class="contact-form" id="contactForm">
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required>
+    <!-- Contact/Register Section -->
+    <section class="contact-section" id="contact">
+        <div class="register-section">
+            <h2>🎯 Register for Classes</h2>
+            <p>Limited seats available! Fill the form below to secure your spot.</p>
+            
+            <div class="google-form-container">
+                <iframe src="https://forms.gle/D6fUgroktmoZV8S49"
+                        width="100%"
+                        height="1200"
+                        frameborder="0"
+                        marginheight="0"
+                        marginwidth="0">
+                    Loading…
+                </iframe>
             </div>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-            <div class="form-group">
-                <label for="grade">Current Grade/Standard</label>
-                <select id="grade" name="grade" required>
-                    <option value="">Select your grade</option>
-                    <option value="9th">9th Grade</option>
-                    <option value="10th">10th Grade</option>
-                    <option value="11th">11th Grade</option>
-                    <option value="12th">12th Grade</option>
-                    <option value="college-1st">College - First Year</option>
-                    <option value="college-2nd">College - Second Year</option>
-                    <option value="college-3rd">College - Third Year</option>
-                    <option value="college-4th">College - Fourth Year</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-            <div class="form-group" id="otherGradeGroup" style="display: none;">
-                <label for="otherGrade">Please Specify your grade/Standard</label>
-                <input type="text" id="otherGrade" name="otherGrade" placeholder="Enter your current status">
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-            <button type="submit" class="submit-button">Send Message</button>
-        </form>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Code Masters Academy, Baramti. All rights reserved.</p>
+        <p>&copy; 2025 Code Masters Academy, Baramati. All rights reserved.</p>
+
+        <p style="margin-top: 1rem; font-size: 1.2rem; color: #00d4ff; font-weight: bold;">
+            📞 Contact:
+            <span style="color:#ffffff;">9665588416</span> /
+            <span style="color:#ffffff;">7387975630</span>
+        </p>
     </footer>
 
     <script>
@@ -600,7 +560,7 @@
             }, 2000);
         });
 
-        // Testimonial Slider
+        // Slider
         let slideIndex = 1;
         let autoSlideInterval;
 
@@ -650,34 +610,6 @@
                     });
                 }
             });
-        });
-
-        // Form Submission with Email
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const message = document.getElementById('message').value;
-            
-            // Create mailto link
-            const subject = encodeURIComponent('New Inquiry from Code Masters Website');
-            const body = encodeURIComponent(
-                `Name: ${name}\n` +
-                `Email: ${email}\n` +
-                `Phone: ${phone}\n\n` +
-                `Message:\n${message}`
-            );
-            
-            // Open email client (replace YOUR_EMAIL with your actual email)
-            window.location.href = `mailto:YOUR_EMAIL@example.com?subject=${subject}&body=${body}`;
-            
-            // Show success message
-            alert('Thank you for your message! Your email client will open to send the details.');
-            
-            // Reset form
-            this.reset();
         });
     </script>
 </body>
