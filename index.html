@@ -139,8 +139,30 @@
             width: 100%;
         }
 
-        /* Hero Section */
+        
+/* Hamburger Menu */
+.hamburger {
+    display:none;
+    font-size:2rem;
+    cursor:pointer;
+    color:#fff;
+}
+@media(max-width:768px){
+    .nav-links { 
+        display:none; 
+        flex-direction:column;
+        width:100%;
+        background:#111;
+        padding:1rem 0;
+    }
+    .nav-links.active { display:flex; }
+    .hamburger { display:block; }
+}
+
+/* Hero Section */
+
         .hero {
+            padding-top:80px;
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -443,6 +465,7 @@
             <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="#contact">Register</a></li>
         </ul>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
     </nav>
 
     <!-- Hero Section -->
@@ -450,7 +473,7 @@
         <div class="hero-content">
             <h1>Code Masters Academy</h1>
             <p>Master Programming Skills in Baramati</p>
-            <p style="font-size: 1.2rem; color: #00d4ff;">Launching January 3rd, 2025</p>
+            <p style="font-size: 1.2rem; color: #00d4ff;">Launching January 3rd, 2026</p>
             <a href="#contact" class="cta-button">Enroll Now</a>
 
             <!-- ⭐ Highlighted Phone Numbers -->
@@ -560,7 +583,13 @@
             }, 2000);
         });
 
-        // Slider
+        
+function toggleMenu(){
+  document.querySelector('.nav-links').classList.toggle('active');
+}
+
+// Slider
+
         let slideIndex = 1;
         let autoSlideInterval;
 
